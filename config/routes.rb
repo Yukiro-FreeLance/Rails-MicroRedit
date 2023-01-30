@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
   root "posts#index"
-
-
-
   devise_scope :user do
     resources :posts do
       resources :comments
