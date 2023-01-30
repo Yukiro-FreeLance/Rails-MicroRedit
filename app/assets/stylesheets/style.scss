@@ -1,0 +1,1113 @@
+$font-stack: 'Roboto', sans-serif;$error-color:#FF0000;
+$error-bgColor:#030208;
+$success-color:#4F8A10;
+$success-bgColor:#DFF2BF;
+$font-stack: 'Roboto', sans-serif;
+$background: #090a11;
+$text: #f2f4f5;
+$third-color: #000000;
+$fourth-color: #ff5500;
+
+
+
+@mixin center__div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin container{
+  width: 100%;
+  height: 100vh;
+}
+
+@mixin  input__div{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  position: relative;
+
+}
+@mixin icon {
+  position: absolute;
+  top: 25%;
+  left: 75%;
+  font-size: 1.5rem;
+  color: $fourth-color;
+}
+@mixin heading {
+  font-size: 3rem;
+  color: $fourth-color;
+  margin-bottom: 1rem;
+  text-align: center;
+
+}
+
+@mixin h3 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      color: $text;
+      text-align: center;
+    }
+
+
+@mixin first__button {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid $fourth-color;
+  border-radius: 5px;
+  color: $fourth-color;
+}
+
+@mixin first__button__hover {
+  background-color: $fourth-color;
+  color:$text;
+  transition: all 0.3s ease-in-out;
+
+}
+
+
+@mixin second__button {
+  font-size: 1rem;
+  margin: 0rem 0rem 1rem 2rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid $fourth-color;
+  border-radius: 5px;
+  background-color: $fourth-color;
+  color:$text;
+
+}
+
+
+@mixin second__button__hover {
+  background-color: $background;
+  color:$fourth-color;
+  transition: all 0.3s ease-in-out;
+
+}
+
+
+@mixin box__shadow {
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.38);
+-webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.38);
+-moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.38);
+
+}
+
+
+
+@mixin input {
+  width: 20rem;
+  height: 4rem;
+  font-size: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: .5rem;
+  background-color: $background;
+  color: $text;
+
+}
+
+
+
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $font-stack;
+  outline: none;
+  border: none;
+  text-decoration: none;
+
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: $background;
+}
+
+.navbar{
+
+  background-color: $third-color;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0rem 2rem;
+  position: fixed;
+  width: 100%;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.38);
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.38);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.38);
+  transition: all 0.3s ease-in-out;
+  .title{
+    color: #ff6214d2;
+  }
+  .navbar-brand{
+      @include center__div;
+      flex-direction: row;
+      font-size: 1.5rem;
+      color: $text;
+      font-weight: 600;
+      letter-spacing: 1px;
+
+      h2{
+        margin-left: 2rem;
+        a{
+          color: #ff6214d2;
+          text-decoration: none;
+        }
+      }
+      li{
+        text-decoration: none;
+      }
+
+  }
+  .navbar-image{
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      margin-right: 1rem;
+  }
+
+
+  .navbar-end{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 25rem;
+      
+     .dropdown{
+        margin-right: 4rem;
+      a{
+        background-color: $fourth-color;
+
+      }
+      ul{
+        background-color: $third-color;
+
+        li{color: #f2f4f5;
+          text-decoration: none;
+        
+
+          .newpost{
+           color:$fourth-color;
+           text-decoration: none;
+           background-color: $third-color;
+          }
+          &:hover{
+            .newpost{
+              color:$text;
+            }
+          }
+
+          .signout{
+            color:$text;
+            text-decoration: none;
+            background-color: $third-color;
+          }
+          &:hover{
+            .signout{
+              color:$fourth-color;
+            }
+          }
+
+        }
+      }
+
+     }
+      .button-container{
+        margin-top: .4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .home_article{
+          font-size: 1rem;
+          margin-bottom: 1rem;
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+          color: $fourth-color;
+          background-color: $third-color;
+          color: $text;
+          text-decoration:none;
+      
+          margin-right: 1rem;
+          
+            &:hover{
+              @include first__button__hover();
+          }
+          }
+          .new_article{
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            color: $fourth-color;
+            background-color: $third-color;
+            color: $text;
+            text-decoration:none;
+ 
+            margin-right: 1rem;
+
+            
+              &:hover{
+                @include first__button__hover();
+            }
+            }
+  
+
+        .sign__in{
+          @include first__button();
+          background-color: $third-color;
+          color: $text;
+          text-decoration:none;
+          border: 1px solid #ff5500;
+
+            &:hover{
+              @include first__button__hover();
+          }
+          }
+
+        .sign__up{
+              @include second__button();
+              text-decoration:none;
+              background-color: $background;
+              border: 1px solid #ff5500;
+              &:hover{
+                  @include second__button__hover();
+                  background-color: $fourth-color;
+                  text-decoration: none;
+                  color: $text;
+              }
+          }
+
+        }
+
+      }
+
+    }
+.container{
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+
+  .card{
+    position: relative;
+    background-color: $third-color;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 10rem 1rem 1rem 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    width: 40rem;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: $text;
+
+    &:hover{
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    }
+    .card__title{
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      color: $fourth-color;
+      align-items:  center;
+      text-decoration: none;
+      &:hover{
+        color: $text;
+        transition: all 0.3s ease-in-out;
+      }
+
+
+    }
+    .card__description{
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      color: $text;
+    }
+    .card__link{
+      a{
+        font-size: 1rem;
+        font-weight: 300;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+          color: $text;
+        }
+      }
+    }
+    .card__arrow {
+      position: absolute;
+      background: #0399f0;
+      padding: 0.4rem;
+      bottom: .0rem;
+      right: 1rem;
+      font-size: .8rem;
+      text-align: center;
+      width: 6rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: .2rem;
+      color: $fourth-color;
+      margin: 0 0 1rem 0;
+      background-color: $third-color;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+      border: 1px #ff5500;
+      &:hover{
+        color: $text;
+        transition: all 0.3s ease-in-out;
+
+      }
+    }
+  }
+}
+.show__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  .wrapper{
+    position: relative;
+    background-color: $third-color;
+    color: $fourth-color;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 10rem 5rem 5rem 5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    width: 50rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    &:hover{
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+    }
+
+    .show__title{
+      font-size: 2rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      margin-bottom: 1rem;
+      color: $fourth-color;
+      text-align: justify;
+    }
+    .show__description{
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      text-align: justify;
+      margin-bottom: 2rem;
+      color: $text;
+    }
+    .configure{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 20rem;
+      margin: 2rem;
+        a{
+          font-size: 1rem;
+          font-weight: 300;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          transition: all 0.3s ease-in-out;
+          background-color: transparent;
+          border: 1px solid rgb(8, 248, 168);
+          margin-right: 1rem;
+          &:hover{
+            background-color: $fourth-color;
+          }
+        }
+        button{
+          background-color: $fourth-color;
+          font-size: 1rem;
+          font-weight: 300;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          transition: all 0.3s ease-in-out;
+          background-color: transparent;
+          border: 1px solid rgb(8, 248, 168);
+          margin-right: 1rem;
+          &:hover{
+            background-color: red;
+          }
+        }
+
+        .comment__container{
+          .comment__form{
+            height: auto;
+            form{
+              height:auto;
+             textarea{
+              background-color:$third-color;
+              color:$text;
+
+
+              &:focus{
+                border-color: 1px solid $fourth-color;
+
+              }
+
+
+             }
+             ::placeholder{
+              color: $text;
+            }
+             input[type="submit"]{
+              background-color:$fourth-color;
+              border:none;
+              margin: 1rem 0 0 14.2rem;
+              &:focus{
+                border-color: 1px solid $fourth-color;
+
+              }
+             }
+
+
+            }
+
+          }
+
+
+            h3{
+              @include h3;
+            }
+            .comment__list{
+              color: $text;
+              font-size: .7rem;
+              .comment__item{
+                  .comment__date{
+                      display: flex;
+                      flex-direction: row;
+                      width: 100%;
+                      p{
+                        margin-left: 1rem;
+                        color: $fourth-color;
+                      }
+
+                  form{
+                   input[type="submit"]{
+                    background-color:$fourth-color;
+                    border:none;
+                    margin: 1rem 0 0 14.2rem;
+                    &:focus{
+                      border-color: 1px solid $fourth-color;
+
+                    }
+
+                  }
+                  }
+
+            }
+            form{
+              button{
+               background-color:$fourth-color;
+               border:none;
+               margin: 1rem 0 0 14.2rem;
+               font-size: 1rem;
+               &:focus{
+                 border-color: 1px solid $fourth-color;
+
+                }
+               }
+              }
+          }
+
+
+
+            }
+
+        }
+     }
+     .comment__container{
+      width: 100%;
+      height: auto;
+      h3{
+        @include h3;
+      }
+      .comment__form{
+        height: auto;
+        form{
+          height:auto;
+          textarea{
+            background-color:$third-color;
+            color:$text;
+
+
+            &:focus{
+              border-color: 1px solid $fourth-color;
+
+            }
+
+           }
+           ::placeholder{
+            color: $text;
+          }
+
+           input[type="submit"]{
+            background-color:$fourth-color;
+            border:none;
+            margin: 1rem 0 0 20rem;
+            &:focus{
+              border-color: 1px solid $fourth-color;
+
+            }
+           }
+
+          }
+       }
+       .comment__list{
+        color: $text;
+        font-size: .7rem;
+        .comment__item{
+          .comment__date{
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            p{
+              margin-left: 1rem;
+              color: $fourth-color;
+            }
+          }
+            form{
+             button{
+              background-color:$fourth-color;
+              border:none;
+              margin: 1rem 0 0 20rem;
+              font-size: 1rem;
+              &:focus{
+                border-color: 1px solid $fourth-color;
+
+               }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+.custom__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .wrapper{
+    position: relative;
+    background-color: $third-color;
+    color: $fourth-color;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 5rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+    width: 30rem;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+
+
+    label{
+      color: $text;
+      font-size: 1rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+    textarea{
+      border: 1px solid $background;
+      border-radius: .2rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      color: $fourth-color;
+      background-color: $third-color;
+      transition: all 0.3s ease-in-out;
+      &:hover{
+        border: 1px solid $fourth-color;
+      }
+
+    }
+    input[type=text]{
+      border: 1px solid $background;
+      border-radius: .2rem;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      color: $fourth-color;
+      background-color: $third-color;
+      transition: all 0.3s ease-in-out;
+      &:hover{
+        border: 1px solid $fourth-color;
+      }
+
+
+    }
+
+    .datetime__container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      position: relative;
+      .datetime{
+        border: 1px solid $background;
+        border-radius: .2rem;
+        padding: .2rem;
+        margin-bottom: 1rem;
+        color: $fourth-color;
+        background-color: $third-color;
+        transition: all 0.3s ease-in-out;
+        &:hover{
+          border: 1px solid $fourth-color;
+        }
+      }
+
+    }
+    input[type=submit]{
+      text-align: center;
+      width: 8rem;
+      font-size: .8rem;
+      font-weight: 300;
+      background-color: $fourth-color;
+      margin: 0 0 1rem 10rem;
+      letter-spacing: 1px;
+      padding: .4rem;
+      text-transform: uppercase;
+      border-radius: .2rem;
+      color: $third-color;
+      transition: all 0.3s ease-in-out;
+      &:hover{
+        color: $text;
+        background-color: $third-color;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    .back__link{
+      text-align: center;
+      width: 8rem;
+      font-size: .8rem;
+      font-weight: 300;
+      background-color: $fourth-color;
+      margin: 0 0 1rem 10rem;
+      letter-spacing: 1px;
+      padding: .4rem;
+      text-transform: uppercase;
+      border-radius: .2rem;
+      color: $third-color;
+      transition: all 0.3s ease-in-out;
+      &:hover{
+        color: $text;
+        background-color: $third-color;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+    .errors{
+
+      color: $error-color;
+      font-size: .8rem;
+      font-weight: 300;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      // put an effects error
+      .cont{
+        margin: 2rem 0;
+        color: $error-color;
+      }
+      li{
+        margin-bottom: .5rem;
+        color: $text;
+      }
+    }
+
+    div.field_with_errors{
+      display: inline-block;
+      label{
+        color: $error-color;
+      }
+      input[type=text]{
+        border: 1px solid $error-color;
+      }
+      textarea, select{
+        border: 1px solid $error-color;
+      }
+    }
+  }
+}
+
+.sign-up-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  .wrapper{
+    position: relative;
+    color: $fourth-color;
+    padding: 1rem;
+    margin-top: 10rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    h2{
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+
+
+      .field{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        label{
+          color: $text;
+          font-size: 1rem;
+          font-weight: 300;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-weight: bold;
+
+        }
+
+        input[type="email"]{
+          @include input;
+          background-color: $third-color;
+          // hover and focus
+          &:hover{
+            border: 1px solid $fourth-color;
+          }
+          &:focus{
+            border: 1px solid $fourth-color;
+          }
+        }
+
+        input[type="password"]{
+          @include input;
+          background-color: $third-color;
+          // hover and focus
+          &:hover{
+            border: 1px solid $fourth-color;
+          }
+          &:focus{
+            border: 1px solid $fourth-color;
+          }
+
+        }
+
+
+      }
+
+      input[type="submit"]{
+        @include second__button();
+        margin: 0 0 1rem 0;
+      }
+
+      .already-have-account{
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        p{
+          color: $text;
+        }
+        a{
+          color: $fourth-color;
+          font-size: .8rem;
+          font-weight: 300;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-left: .5rem;
+          transition: all 0.3s ease-in-out;
+          &:hover{
+            color: $text;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+.sign-in-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  .wrapper{
+    position: relative;
+    color: $fourth-color;
+    padding: 1rem;
+    margin-top: 10rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    h2{
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+
+
+      .field{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        label{
+          color: $text;
+          font-size: 1rem;
+          font-weight: 300;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-weight: bold;
+
+        }
+
+        input[type="email"]{
+          @include input;
+          background-color: $third-color;
+          // hover and focus
+          &:hover{
+            border: 1px solid $fourth-color;
+          }
+          &:focus{
+            border: 1px solid $fourth-color;
+          }
+        }
+
+        input[type="password"]{
+          @include input;
+          background-color: $third-color;
+          // hover and focus
+          &:hover{
+            border: 1px solid $fourth-color;
+          }
+          &:focus{
+            border: 1px solid $fourth-color;
+          }
+
+        }
+
+
+      }
+
+      input[type="submit"]{
+        @include second__button();
+        margin: 0 0 1rem 0;
+      }
+
+      .already-have-account{
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        p{
+          color: $text;
+        }
+        a{
+          color: $fourth-color;
+          font-size: .8rem;
+          font-weight: 300;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-left: .5rem;
+          transition: all 0.3s ease-in-out;
+          &:hover{
+            color: $text;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+.edit-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  .wrapper{
+    position: relative;
+    color: $fourth-color;
+    padding: 1rem;
+    margin-top: 10rem;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+
+    h2{
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    form{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      height: 100%;
+
+
+      .field{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        label{
+          color: $text;
+          font-size: 1rem;
+          font-weight: 300;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-weight: bold;
+
+        }
+
+        input[type="email"]{
+          @include input;
+          background-color: $third-color;
+          // hover and focus
+          &:hover{
+            border: 1px solid $fourth-color;
+          }
+          &:focus{
+            border: 1px solid $fourth-color;
+          }
+        }
+
+        input[type="password"]{
+          @include input;
+          background-color: $third-color;
+          // hover and focus
+          &:hover{
+            border: 1px solid $fourth-color;
+          }
+          &:focus{
+            border: 1px solid $fourth-color;
+          }
+
+        }
+
+
+      }
+
+      input[type="submit"]{
+        @include second__button();
+        margin: 0 0 1rem 0;
+      }
+
+      .already-have-account{
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        p{
+          color: $text;
+          button{
+            color:$fourth-color;
+            background-color: $background;
+
+            &:hover{
+              text-decoration: underline;
+            }
+          }
+        }
+        a{
+          color: $fourth-color;
+          font-size: .8rem;
+          font-weight: 300;
+          letter-spacing: 1px;
+          text-transform: uppercase;
+          font-weight: bold;
+          margin-left: .5rem;
+          transition: all 0.3s ease-in-out;
+          &:hover{
+            color: $text;
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}

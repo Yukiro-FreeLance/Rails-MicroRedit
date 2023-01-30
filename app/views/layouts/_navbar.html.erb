@@ -1,0 +1,19 @@
+<%# a av bar container with sign in and sign out  %>
+
+<nav class="navbar">
+    <div class="navbar-brand">
+        <%= link_to root_path do %>
+        <%= image_tag "https://www.redditinc.com/assets/images/site/reddit-logo.png", class: "navbar-image" %>
+        <% end %>
+        <h1 class="title">Micro-Reddit</h1>
+     
+
+    </div>
+    <div class="navbar-end">   <%# link all posts  %>
+<div class="button-container">
+     <%= link_to "HOME", root_path,class:"home_article" %>
+      <%= link_to "NEW ", new_post_path,class:"new_article" %>
+      </div>
+        <%= render 'user/session_manager' %>
+    </div>
+</nav>
